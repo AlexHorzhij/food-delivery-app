@@ -3,7 +3,7 @@ import { DishesBlock } from './DishList.styled';
 export default function DishList() {
   return (
     <DishesBlock>
-      <p> Choose shope</p>
+      <p> This page empty now :(</p>
     </DishesBlock>
   );
 }

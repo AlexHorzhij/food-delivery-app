@@ -1,22 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import type { PayloadAction } from '@reduxjs/toolkit';
-
-// export interface shopsState {
-//   value: number;
-// }
+import { getShops, postOrder } from './shopsOperation';
 
 const initialState = {
   shopsList: [],
   orders: [],
+  currentShop: null,
+  isLoading: false,
+  error: null,
 };
 
 export const shopsSlice = createSlice({
   name: 'shops',
   initialState,
   reducers: {
+    setCurrentShop: (state, { payload }) => {
+      state.currentShop = payload;
+    },
     addToOrders: (state, { payload }) => {
       const order = { ...payload, count: 1 };
-      console.log('order: ', order);
       state.orders.push(order);
     },
     removeFromOrders: (state, { payload }) => {
@@ -25,14 +26,48 @@ export const shopsSlice = createSlice({
       });
     },
     changeOrderCount: (state, { payload }) => {
-      console.log('payload: ', payload);
       const orderIndex = state.orders.findIndex(item => item.id === payload.id);
       state.orders[orderIndex].count = Number(payload.count);
     },
   },
+  extraReducers: builder => {
+    builder
+      .addCase(getShops.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getShops.fulfilled, (state, { payload }) => {
+        payload.forEach(element => {
+          element.dishes.map(item => (item.own = element._id));
+        });
+        state.shopsList = payload;
+        state.isLoading = false;
+        state.error = false;
+      })
+      .addCase(getShops.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
+      })
+      .addCase(postOrder.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(postOrder.fulfilled, (state, { payload }) => {
+        console.log('payload: ', payload);
+
+        state.isLoading = false;
+        state.error = false;
+      })
+      .addCase(postOrder.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
+      });
+  },
 });
 
-export const { addToOrders, removeFromOrders, changeOrderCount } =
-  shopsSlice.actions;
+export const {
+  addToOrders,
+  removeFromOrders,
+  changeOrderCount,
+  setCurrentShop,
+} = shopsSlice.actions;
 
 export default shopsSlice.reducer;

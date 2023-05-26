@@ -7,7 +7,7 @@ import { orderList } from '../../../redux/shops/shopsSelector';
 
 export default function DishItem({ data }) {
   const orderedDish = useSelector(orderList);
-  const checkOrder = orderedDish.findIndex(item => item.id === data.id);
+  const checkOrder = orderedDish.findIndex(item => item._id === data._id);
   const [ordered, setOrdered] = useState(checkOrder !== -1);
   const dispatch = useDispatch();
   const toggleOrder = () => {

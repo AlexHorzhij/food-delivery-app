@@ -6,7 +6,6 @@ import OrderItems from '../OrderItems/OrderItems';
 
 export default function OrderList() {
   const orders = useSelector(orderList);
-  console.log('orders: ', orders);
   return (
     <List
       sx={{ height: '100%', bgcolor: 'background.paper', overflowY: 'auto' }}

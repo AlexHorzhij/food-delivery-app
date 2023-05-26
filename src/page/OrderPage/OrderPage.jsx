@@ -5,24 +5,27 @@ import OrderForm from '../../components/Order/OrderForm/OrderForm';
 import { OrderFormWrapper, SubmitWrapper } from './OrderPage.styled';
 import { v4 } from 'uuid';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { orderList } from '../../redux/shops/shopsSelector';
+import { useSelector, useDispatch } from 'react-redux';
+import { orderList, currentShop } from '../../redux/shops/shopsSelector';
+import { postOrder } from '../../redux/shops/shopsOperation';
 
 export default function OrderPage() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [address, setAddress] = useState();
-
+  const dispatch = useDispatch();
   const orders = useSelector(orderList);
+  const selectedShop = useSelector(currentShop);
+
   const totalPrice = () => {
     return orders.reduce((acc, item) => acc + item.price * item.count, 0);
   };
   const orderData = {
     id: v4(),
     shopData: {
-      shopName: '',
-      shopId: '',
+      shopName: selectedShop?.name,
+      shopId: selectedShop?.id,
     },
     orders,
     userData: {
@@ -33,8 +36,8 @@ export default function OrderPage() {
     },
   };
 
-  const setUser = () => {
-    // orderData.user = userData;
+  const submitForm = () => {
+    dispatch(postOrder(orderData));
     console.log(orderData);
   };
 
@@ -58,7 +61,7 @@ export default function OrderPage() {
           >
             Total price: {totalPrice()}
           </Typography>
-          <Button variant="contained" onClick={setUser}>
+          <Button variant="contained" onClick={submitForm}>
             Submit
           </Button>
         </SubmitWrapper>
