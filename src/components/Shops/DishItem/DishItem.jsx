@@ -92,11 +92,11 @@ export default function DishItem({ data }) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {'Have you already chosen a meal at another restaurant.'}
+          {'You have chosen a meal at another restaurant.'}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Do you want to cancel your pre-order?
+            Do you want to remove your pre-order?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -107,17 +107,5 @@ export default function DishItem({ data }) {
         </DialogActions>
       </Dialog>
     </Card>
-    // <Card>
-    //   <Img src={data.url} />
-    //   <Title>{data.name}</Title>
-    //   <Price>{data.price} USD</Price>
-    //   <Button
-    //     variant={ordered ? 'outlined' : 'contained'}
-    //     onClick={toggleOrder}
-    //     style={{ ...btnStyle }}
-    //   >
-    //     add to Card
-    //   </Button>
-    // </Card>
   );
 }

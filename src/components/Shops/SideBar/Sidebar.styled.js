@@ -10,5 +10,5 @@ export const SidebarContainer = styled.div`
 `;
 
 export const SidebarTitle = styled.h3`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;

@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Tab, Tabs } from '@mui/material';
-// import { ShopsContainer } from './ShopList.styled';
-// import ShopItem from '../ShopItem/ShopItem';
 import { shopsList, currentShop } from '../../../redux/shops/shopsSelector';
 import { setCurrentShop } from 'redux/shops/shopsSlice';
 

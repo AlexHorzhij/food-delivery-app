@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 function App() {
   const dispatch = useDispatch();
   dispatch(getShops());
+
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

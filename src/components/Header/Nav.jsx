@@ -9,7 +9,6 @@ export default function Navigation() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    // navigation(`/${newValue}`);
   };
 
   return (

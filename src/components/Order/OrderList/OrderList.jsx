@@ -1,4 +1,3 @@
-// import { Card, Image, Input } from './OrderItems.styled';
 import { List, ListItem, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { orderList } from '../../../redux/shops/shopsSelector';
