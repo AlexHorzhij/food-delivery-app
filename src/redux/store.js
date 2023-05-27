@@ -15,7 +15,7 @@ import {
 const persistConfig = {
   key: 'shops',
   storage,
-  whitelist: ['orders', 'shopsList'],
+  whitelist: ['orders', 'shopsList', 'currentShop'],
 };
 const persistedReducer = persistReducer(persistConfig, shopsReducers);
 

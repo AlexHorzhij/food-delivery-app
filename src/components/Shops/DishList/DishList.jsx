@@ -12,7 +12,7 @@ export default function DishList() {
     <DishesBlock>
       <List>
         {data[0].dishes.map(dish => {
-          return <DishItem key={dish._id} data={dish} />;
+          return <DishItem key={dish.id} data={dish} />;
         })}
       </List>
     </DishesBlock>

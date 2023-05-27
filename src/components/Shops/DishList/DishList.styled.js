@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const DishesBlock = styled.div`
   padding: 20px 30px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-left: 20px;
   display: flex;

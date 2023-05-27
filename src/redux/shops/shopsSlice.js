@@ -25,6 +25,9 @@ export const shopsSlice = createSlice({
         return order.id !== payload;
       });
     },
+    clearOrders: state => {
+      state.orders = [];
+    },
     changeOrderCount: (state, { payload }) => {
       const orderIndex = state.orders.findIndex(item => item.id === payload.id);
       state.orders[orderIndex].count = Number(payload.count);
@@ -36,6 +39,7 @@ export const shopsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getShops.fulfilled, (state, { payload }) => {
+        console.log('payload: ', payload);
         payload.forEach(element => {
           element.dishes.map(item => (item.own = element._id));
         });
@@ -68,6 +72,7 @@ export const {
   removeFromOrders,
   changeOrderCount,
   setCurrentShop,
+  clearOrders,
 } = shopsSlice.actions;
 
 export default shopsSlice.reducer;

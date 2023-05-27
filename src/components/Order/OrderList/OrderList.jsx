@@ -8,7 +8,16 @@ export default function OrderList() {
   const orders = useSelector(orderList);
   return (
     <List
-      sx={{ height: '100%', bgcolor: 'background.paper', overflowY: 'auto' }}
+      sx={{
+        height: '100%',
+        width: '570px',
+        bgcolor: 'background.paper',
+        overflowY: 'auto',
+        border: 1,
+        borderColor: 'rgba(0, 0, 0, 0.2)',
+        borderRadius: 3,
+        padding: 1,
+      }}
     >
       {orders.map(item => (
         <ListItem key={item.id}>
