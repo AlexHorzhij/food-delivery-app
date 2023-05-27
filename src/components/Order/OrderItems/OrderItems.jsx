@@ -1,4 +1,7 @@
-import { changeOrderCount } from 'redux/shops/shopsSlice';
+import { changeOrderCount, removeFromOrders } from 'redux/shops/shopsSlice';
+import IconButton from '@mui/material/IconButton';
+import Popover from '../../../reusableComponents/Popover';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch } from 'react-redux';
 import {
   TextField,
@@ -14,6 +17,10 @@ export default function OrderItems({ data }) {
   const addDish = e => {
     dispatch(changeOrderCount({ id: data.id, count: e.target.value }));
   };
+  const removeOrder = id => {
+    dispatch(removeFromOrders(id));
+  };
+
   return (
     <Card sx={{ display: 'flex', p: 2 }}>
       <CardMedia
@@ -23,6 +30,15 @@ export default function OrderItems({ data }) {
         alt="food image"
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <IconButton
+          aria-label="delete"
+          sx={{ position: 'absolute', top: 10, right: 18, opacity: 0.5 }}
+          onClick={() => removeOrder(data.id)}
+        >
+          <Popover text={'delete'}>
+            <DeleteIcon />
+          </Popover>
+        </IconButton>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
             {data.name}

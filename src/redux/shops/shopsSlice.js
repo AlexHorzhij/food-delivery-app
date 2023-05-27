@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getShops, postOrder } from './shopsOperation';
-
+import toast from 'react-hot-toast';
 const initialState = {
   shopsList: [],
   orders: [],
@@ -39,7 +39,6 @@ export const shopsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getShops.fulfilled, (state, { payload }) => {
-        console.log('payload: ', payload);
         payload.forEach(element => {
           element.dishes.map(item => (item.own = element._id));
         });
@@ -54,15 +53,16 @@ export const shopsSlice = createSlice({
       .addCase(postOrder.pending, state => {
         state.isLoading = true;
       })
-      .addCase(postOrder.fulfilled, (state, { payload }) => {
-        console.log('payload: ', payload);
-
+      .addCase(postOrder.fulfilled, state => {
+        state.orders = [];
         state.isLoading = false;
         state.error = false;
+        toast.success('Order was sended!');
       })
       .addCase(postOrder.rejected, (state, { payload }) => {
         state.error = payload;
         state.isLoading = false;
+        toast.error('Order wasn`t sended :(');
       });
   },
 });

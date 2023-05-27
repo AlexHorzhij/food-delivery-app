@@ -7,7 +7,6 @@ import OrderPage from './page/OrderPage/OrderPage';
 import DishList from './components/Shops/DishList/DishList';
 import { getShops } from './redux/shops/shopsOperation';
 import { useDispatch } from 'react-redux';
-
 function App() {
   const dispatch = useDispatch();
   dispatch(getShops());

@@ -43,18 +43,22 @@ export default function DishItem({ data }) {
     toggleOrder();
   };
   const toggleOrder = () => {
+    setOrdered(prevState => !prevState);
+    if (!ordered) {
+      dispatch(addToOrders(data));
+    } else {
+      dispatch(removeFromOrders(data.id));
+    }
+  };
+
+  const addToOrder = () => {
     const isCurrentShopDish = orderedDish.some(
       item => item.own !== (selectedShop?.id || currentRoute)
     );
     if (isCurrentShopDish) {
       handleClickOpen();
     } else {
-      setOrdered(prevState => !prevState);
-      if (!ordered) {
-        dispatch(addToOrders(data));
-      } else {
-        dispatch(removeFromOrders(data.id));
-      }
+      toggleOrder();
     }
   };
 
@@ -75,7 +79,7 @@ export default function DishItem({ data }) {
         </Typography>
         <Button
           variant={ordered ? 'outlined' : 'contained'}
-          onClick={toggleOrder}
+          onClick={addToOrder}
           style={{ ...btnStyle }}
         >
           add to Card

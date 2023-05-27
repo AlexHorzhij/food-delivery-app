@@ -1,5 +1,5 @@
 // import { Card, Image, Input } from './OrderItems.styled';
-import { List, ListItem } from '@mui/material';
+import { List, ListItem, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { orderList } from '../../../redux/shops/shopsSelector';
 import OrderItems from '../OrderItems/OrderItems';
@@ -19,11 +19,17 @@ export default function OrderList() {
         padding: 1,
       }}
     >
-      {orders.map(item => (
-        <ListItem key={item.id}>
-          <OrderItems data={item} />
-        </ListItem>
-      ))}
+      {orders.length > 0 ? (
+        orders.map(item => (
+          <ListItem key={item.id}>
+            <OrderItems data={item} />
+          </ListItem>
+        ))
+      ) : (
+        <Typography variant="h4" sx={{ textAlign: 'center', mt: 10 }}>
+          You don`t have any orders now.
+        </Typography>
+      )}
     </List>
   );
 }

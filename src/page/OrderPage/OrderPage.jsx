@@ -10,10 +10,10 @@ import { orderList, currentShop } from '../../redux/shops/shopsSelector';
 import { postOrder } from '../../redux/shops/shopsOperation';
 
 export default function OrderPage() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [address, setAddress] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
   const dispatch = useDispatch();
   const orders = useSelector(orderList);
   const selectedShop = useSelector(currentShop);
@@ -38,7 +38,10 @@ export default function OrderPage() {
 
   const submitForm = () => {
     dispatch(postOrder(orderData));
-    console.log(orderData);
+    setName('');
+    setEmail('');
+    setPhone('');
+    setAddress('');
   };
 
   return (
@@ -50,6 +53,7 @@ export default function OrderPage() {
             setEmail={setEmail}
             setPhone={setPhone}
             setAddress={setAddress}
+            data={orderData.userData}
           />
           <OrderList />
         </OrderFormWrapper>
@@ -61,7 +65,11 @@ export default function OrderPage() {
           >
             Total price: {totalPrice()}
           </Typography>
-          <Button variant="contained" onClick={submitForm}>
+          <Button
+            sx={{ fontSize: 16 }}
+            variant={orders.length > 0 ? 'contained' : 'disabled'}
+            onClick={submitForm}
+          >
             Submit
           </Button>
         </SubmitWrapper>
