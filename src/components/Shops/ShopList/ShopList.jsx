@@ -11,12 +11,13 @@ export default function ShopList() {
   const navigator = useNavigate();
   const dispatch = useDispatch();
 
-  const [value, setValue] = useState(selectedShop.id);
+  const [value, setValue] = useState(selectedShop?.id);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   const selectShop = (id, name) => {
+    console.log('id: ', id);
     dispatch(setCurrentShop({ id, name }));
     navigator(`/shops/${id}`);
   };
@@ -31,6 +32,7 @@ export default function ShopList() {
       sx={{ borderRight: 1, borderColor: 'divider' }}
     >
       {shops.map(shop => {
+        console.log('shop: ', shop);
         return (
           <Tab
             sx={{ mb: 2, fontSize: 18 }}
