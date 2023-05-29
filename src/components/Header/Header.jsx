@@ -1,13 +1,12 @@
 import { HeaderSection, HeaderContent } from './Header.styled';
 import { Container } from '../../reusableComponents/Container.styled';
 import Navigation from './Nav';
-import { Divider, LinearProgress } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { isLoading } from 'redux/shops/shopsSelector';
+// import { useSelector } from 'react-redux';
+// import { isLoading } from 'redux/shops/shopsSelector';
 import { Toaster } from 'react-hot-toast';
 
 export default function Header() {
-  const loading = useSelector(isLoading);
+  // const loading = useSelector(isLoading);
   return (
     <>
       <HeaderSection>
@@ -18,7 +17,6 @@ export default function Header() {
           </HeaderContent>
         </Container>
       </HeaderSection>
-      {loading ? <LinearProgress /> : <Divider />}
     </>
   );
 }
