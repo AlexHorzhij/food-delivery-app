@@ -1,9 +1,10 @@
 import { Outlet, useParams, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { shopsList } from 'redux/shops/shopsSelector';
 import { Container, Main } from '../../reusableComponents';
 import Sidebar from '../../components/Shops/SideBar/SideBar';
 import DishEmptyList from '../../components/Shops/DishList/DishEmptyList';
-import { useSelector } from 'react-redux';
-import { shopsList } from 'redux/shops/shopsSelector';
+
 export default function Shops() {
   const shopList = useSelector(shopsList);
   const firstShop = shopList.length > 0 ? shopList[0]._id : null;
