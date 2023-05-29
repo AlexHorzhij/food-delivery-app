@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import ShopsPage from './page/ShopsPage/ShopsPage';
 import ErrorPage from './page/ErrorPage';
@@ -17,12 +17,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Navigate to={`shops`} />} />
-
         <Route path="shops" element={<ShopsPage />}>
           <Route path="/shops/:shop" element={<DishList />} />
         </Route>
-        <Route path="/order" element={<OrderPage />} />
+        <Route path="order" element={<OrderPage />} />
       </Route>
       <Route path="*" element={<ErrorPage />} />
     </Routes>

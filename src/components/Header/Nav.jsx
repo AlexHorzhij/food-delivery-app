@@ -6,7 +6,6 @@ import { useState } from 'react';
 export default function Navigation() {
   const location = useLocation().pathname.split('/')[1];
   const [value, setValue] = useState(location || 'shops');
-  console.log('value: ', location);
   const navigation = useNavigate();
 
   const handleChange = (event, newValue) => {
@@ -15,11 +14,7 @@ export default function Navigation() {
 
   return (
     <NavList>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        aria-label="basic tabs example"
-      >
+      <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
         <Tab label="Shops" onClick={() => navigation('/shops')} value="shops" />
         <Tab
           label="Shopping Card"
