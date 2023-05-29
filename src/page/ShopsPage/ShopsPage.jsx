@@ -4,11 +4,7 @@ import Sidebar from '../../components/Shops/SideBar/SideBar';
 import DishEmptyList from '../../components/Shops/DishList/DishEmptyList';
 import { useSelector } from 'react-redux';
 import { shopsList } from 'redux/shops/shopsSelector';
-import { getShops } from 'redux/shops/shopsOperation';
-import { useDispatch } from 'react-redux';
 export default function Shops() {
-  const dispatch = useDispatch();
-  dispatch(getShops());
   const shopList = useSelector(shopsList);
   const firstShop = shopList.length > 0 ? shopList[0]._id : null;
 

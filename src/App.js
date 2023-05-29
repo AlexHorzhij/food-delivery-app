@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import ShopsPage from './page/ShopsPage/ShopsPage';
@@ -9,7 +10,9 @@ import { getShops } from './redux/shops/shopsOperation';
 import { useDispatch } from 'react-redux';
 function App() {
   const dispatch = useDispatch();
-  dispatch(getShops());
+  useEffect(() => {
+    dispatch(getShops());
+  }, [dispatch]);
 
   return (
     <Routes>
