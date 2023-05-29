@@ -17,9 +17,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Navigate to={`/shops`} />} />
+        <Route index element={<Navigate to={`shops`} />} />
 
-        <Route path="/shops" element={<ShopsPage />}>
+        <Route path="shops" element={<ShopsPage />}>
           <Route path="/shops/:shop" element={<DishList />} />
         </Route>
         <Route path="/order" element={<OrderPage />} />

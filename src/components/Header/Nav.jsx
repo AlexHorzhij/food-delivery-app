@@ -1,10 +1,12 @@
 import { Tab, Tabs } from '@mui/material';
 import { NavList } from './Nav.styled';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Navigation() {
-  const [value, setValue] = useState('shops');
+  const location = useLocation().pathname.split('/')[1];
+  const [value, setValue] = useState(location || 'shops');
+  console.log('value: ', location);
   const navigation = useNavigate();
 
   const handleChange = (event, newValue) => {
