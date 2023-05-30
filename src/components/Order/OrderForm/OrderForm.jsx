@@ -1,5 +1,7 @@
 import { Wrapper } from './OrderForm.styled';
 import { TextField } from '@mui/material';
+import SimpleMap from 'reusableComponents/Map';
+// import { Loader } from '@googlemaps/js-api-loader';
 
 export default function OrderForm({
   setName,
@@ -10,6 +12,8 @@ export default function OrderForm({
 }) {
   return (
     <Wrapper component="form">
+      <SimpleMap />
+
       <TextField
         id="name"
         label="Name"

@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 
 export const Wrapper = styled(Box)`
   flex-grow: 1;
-  padding: 50px 50px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
   gap: 40px;
