@@ -14,9 +14,20 @@ export default function OrderPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
+  const [inputs, setInputs] = useState([]);
+  console.log('inputs: ', inputs);
+
   const dispatch = useDispatch();
   const orders = useSelector(orderList);
   const selectedShop = useSelector(currentShop);
+
+  const addToInput = input => {
+    if (input) {
+      setInputs(prev => {
+        return [...prev, input];
+      });
+    }
+  };
 
   const totalPrice = () => {
     return orders.reduce((acc, item) => acc + item.price * item.count, 0);
@@ -37,11 +48,19 @@ export default function OrderPage() {
   };
 
   const submitForm = () => {
-    dispatch(postOrder(orderData));
-    setName('');
-    setEmail('');
-    setPhone('');
-    setAddress('');
+    const isValid = inputs.reduce((valid, input) => {
+      valid = input.validate();
+      return valid;
+    }, true);
+    console.log('isValid: ', isValid);
+
+    if (isValid) {
+      dispatch(postOrder(orderData));
+      setName('');
+      setEmail('');
+      setPhone('');
+      setAddress('');
+    }
   };
 
   return (
@@ -54,6 +73,7 @@ export default function OrderPage() {
             setPhone={setPhone}
             setAddress={setAddress}
             data={orderData.userData}
+            addToInput={addToInput}
           />
           <OrderList />
         </OrderFormWrapper>
@@ -66,6 +86,7 @@ export default function OrderPage() {
             Total price: {totalPrice()}
           </Typography>
           <Button
+            type="submit"
             sx={{ fontSize: 16 }}
             variant={orders.length > 0 ? 'contained' : 'disabled'}
             onClick={submitForm}

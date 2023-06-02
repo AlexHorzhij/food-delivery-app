@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     dispatch(getShops());
   }, [dispatch]);
-  console.log(process.env.GOOGLE_MAP_API_KEY);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
