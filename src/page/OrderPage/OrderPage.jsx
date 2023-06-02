@@ -24,6 +24,10 @@ export default function OrderPage() {
   const addToInput = input => {
     if (input) {
       setInputs(prev => {
+        const check = prev?.findIndex(item => {
+          return item.name === input.name;
+        });
+        if (check !== -1) return prev;
         return [...prev, input];
       });
     }
@@ -52,7 +56,6 @@ export default function OrderPage() {
       valid = input.validate();
       return valid;
     }, true);
-    console.log('isValid: ', isValid);
 
     if (isValid) {
       dispatch(postOrder(orderData));
