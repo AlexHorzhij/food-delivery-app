@@ -15,7 +15,6 @@ export default function OrderPage() {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [inputs, setInputs] = useState([]);
-  console.log('inputs: ', inputs);
 
   const dispatch = useDispatch();
   const orders = useSelector(orderList);

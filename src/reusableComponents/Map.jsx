@@ -14,7 +14,7 @@ const center = {
 function MyComponent() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: '',
+    googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
   // eslint-disable-next-line
   const [map, setMap] = useState(null);

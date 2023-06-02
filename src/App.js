@@ -8,7 +8,6 @@ const ShopsPage = lazy(() => import('./page/ShopsPage/ShopsPage'));
 const ErrorPage = lazy(() => import('./page/ErrorPage'));
 const OrderPage = lazy(() => import('./page/OrderPage/OrderPage'));
 const DishList = lazy(() => import('./components/Shops/DishList/DishList'));
-
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
