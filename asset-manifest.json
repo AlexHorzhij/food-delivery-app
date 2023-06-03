@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/food-delivery-app/static/css/main.be4f8678.css",
-    "main.js": "/food-delivery-app/static/js/main.7d4a040c.js",
+    "main.js": "/food-delivery-app/static/js/main.6863beca.js",
     "static/js/169.253c42ee.chunk.js": "/food-delivery-app/static/js/169.253c42ee.chunk.js",
     "static/js/451.7363933c.chunk.js": "/food-delivery-app/static/js/451.7363933c.chunk.js",
-    "static/js/697.a5a2dcc4.chunk.js": "/food-delivery-app/static/js/697.a5a2dcc4.chunk.js",
+    "static/js/697.2d39e5a7.chunk.js": "/food-delivery-app/static/js/697.2d39e5a7.chunk.js",
     "static/js/986.472e7a67.chunk.js": "/food-delivery-app/static/js/986.472e7a67.chunk.js",
     "static/js/160.05c39345.chunk.js": "/food-delivery-app/static/js/160.05c39345.chunk.js",
     "static/js/229.6e98869a.chunk.js": "/food-delivery-app/static/js/229.6e98869a.chunk.js",
@@ -12,10 +12,10 @@
     "static/js/225.9b02c684.chunk.js": "/food-delivery-app/static/js/225.9b02c684.chunk.js",
     "index.html": "/food-delivery-app/index.html",
     "main.be4f8678.css.map": "/food-delivery-app/static/css/main.be4f8678.css.map",
-    "main.7d4a040c.js.map": "/food-delivery-app/static/js/main.7d4a040c.js.map",
+    "main.6863beca.js.map": "/food-delivery-app/static/js/main.6863beca.js.map",
     "169.253c42ee.chunk.js.map": "/food-delivery-app/static/js/169.253c42ee.chunk.js.map",
     "451.7363933c.chunk.js.map": "/food-delivery-app/static/js/451.7363933c.chunk.js.map",
-    "697.a5a2dcc4.chunk.js.map": "/food-delivery-app/static/js/697.a5a2dcc4.chunk.js.map",
+    "697.2d39e5a7.chunk.js.map": "/food-delivery-app/static/js/697.2d39e5a7.chunk.js.map",
     "986.472e7a67.chunk.js.map": "/food-delivery-app/static/js/986.472e7a67.chunk.js.map",
     "160.05c39345.chunk.js.map": "/food-delivery-app/static/js/160.05c39345.chunk.js.map",
     "229.6e98869a.chunk.js.map": "/food-delivery-app/static/js/229.6e98869a.chunk.js.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.be4f8678.css",
-    "static/js/main.7d4a040c.js"
+    "static/js/main.6863beca.js"
   ]
 }
