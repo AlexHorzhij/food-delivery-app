@@ -74,7 +74,7 @@ export default function OrderPage() {
             setEmail={setEmail}
             setPhone={setPhone}
             setAddress={setAddress}
-            data={orderData.userData}
+            data={{ name, email, phone, address }}
             addToInput={addToInput}
           />
           <OrderList />

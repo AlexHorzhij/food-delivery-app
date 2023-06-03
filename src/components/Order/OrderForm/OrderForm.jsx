@@ -1,7 +1,9 @@
 import { Wrapper } from './OrderForm.styled';
-import SimpleMap from 'reusableComponents/Map';
+import SimpleMap from 'reusableComponents/map/Map';
 import { InputApp } from '../../../reusableComponents';
 import { notEmpty, emailValidation } from 'utils/validationRules';
+import MapSearch from 'reusableComponents/map/MapSearch';
+import { useState } from 'react';
 
 export default function OrderForm({
   setName,
@@ -11,9 +13,11 @@ export default function OrderForm({
   data,
   addToInput,
 }) {
+  const [selected, setSelected] = useState(undefined);
+
   return (
     <Wrapper component="form">
-      <SimpleMap />
+      <SimpleMap selected={selected} setSelected={setSelected} />
 
       <InputApp
         error={true}
@@ -22,7 +26,7 @@ export default function OrderForm({
         label="Name"
         variant="outlined"
         value={data.name}
-        onChange={e => setName(e.target.value)}
+        onChange={setName}
         addToInput={addToInput}
       />
       <InputApp
@@ -32,7 +36,7 @@ export default function OrderForm({
         label="Email"
         variant="outlined"
         value={data.email}
-        onChange={e => setEmail(e.target.value)}
+        onChange={setEmail}
         addToInput={addToInput}
       />
       <InputApp
@@ -42,17 +46,19 @@ export default function OrderForm({
         label="Phone"
         variant="outlined"
         value={data.phone}
-        onChange={e => setPhone(e.target.value)}
+        onChange={setPhone}
         addToInput={addToInput}
       />
-      <InputApp
+
+      <MapSearch
+        setSelected={setSelected}
         error={true}
         validationRules={[notEmpty]}
         id="address"
         label="Address"
         variant="outlined"
         value={data.address}
-        onChange={e => setAddress(e.target.value)}
+        onChange={setAddress}
         addToInput={addToInput}
       />
     </Wrapper>

@@ -2,8 +2,7 @@ import { TextField } from '@mui/material';
 import { useState, useRef, useEffect } from 'react';
 
 export default function InputApp(props) {
-  const { addToInput } = props;
-  const [state, setState] = useState('');
+  const { addToInput, onChange } = props;
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -12,7 +11,7 @@ export default function InputApp(props) {
 
   const validate = function () {
     const valid = props.validationRules.every(rule => {
-      const { result, message } = rule(state);
+      const { result, message } = rule(props.value);
       setError(!result);
       setErrorMessage(message);
 
@@ -29,18 +28,20 @@ export default function InputApp(props) {
   }, []);
 
   const changeHandler = e => {
-    setState(e.target.value);
+    props.onChange(e.target.value);
+    onChange(e.target.value);
   };
 
   return (
     <TextField
+      {...props.params}
       ref={ref}
       error={error}
       helperText={error && errorMessage}
       id={props.id}
       label={props.label}
       variant={props.variant}
-      value={state}
+      value={props.value}
       onChange={changeHandler}
       onBlur={validate}
     />
