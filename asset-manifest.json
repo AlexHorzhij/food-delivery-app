@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/food-delivery-app/static/css/main.be4f8678.css",
-    "main.js": "/food-delivery-app/static/js/main.495fef59.js",
-    "static/js/169.de16300d.chunk.js": "/food-delivery-app/static/js/169.de16300d.chunk.js",
-    "static/js/451.8b26f684.chunk.js": "/food-delivery-app/static/js/451.8b26f684.chunk.js",
-    "static/js/635.6915b8c3.chunk.js": "/food-delivery-app/static/js/635.6915b8c3.chunk.js",
-    "static/js/986.14e73ddb.chunk.js": "/food-delivery-app/static/js/986.14e73ddb.chunk.js",
-    "static/js/319.1f709665.chunk.js": "/food-delivery-app/static/js/319.1f709665.chunk.js",
-    "static/js/962.709f5be5.chunk.js": "/food-delivery-app/static/js/962.709f5be5.chunk.js",
+    "main.js": "/food-delivery-app/static/js/main.7d4a040c.js",
+    "static/js/169.253c42ee.chunk.js": "/food-delivery-app/static/js/169.253c42ee.chunk.js",
+    "static/js/451.7363933c.chunk.js": "/food-delivery-app/static/js/451.7363933c.chunk.js",
+    "static/js/697.a5a2dcc4.chunk.js": "/food-delivery-app/static/js/697.a5a2dcc4.chunk.js",
+    "static/js/986.472e7a67.chunk.js": "/food-delivery-app/static/js/986.472e7a67.chunk.js",
+    "static/js/160.05c39345.chunk.js": "/food-delivery-app/static/js/160.05c39345.chunk.js",
+    "static/js/229.6e98869a.chunk.js": "/food-delivery-app/static/js/229.6e98869a.chunk.js",
     "static/js/997.55488a2f.chunk.js": "/food-delivery-app/static/js/997.55488a2f.chunk.js",
-    "static/js/732.212297d2.chunk.js": "/food-delivery-app/static/js/732.212297d2.chunk.js",
+    "static/js/225.9b02c684.chunk.js": "/food-delivery-app/static/js/225.9b02c684.chunk.js",
     "index.html": "/food-delivery-app/index.html",
     "main.be4f8678.css.map": "/food-delivery-app/static/css/main.be4f8678.css.map",
-    "main.495fef59.js.map": "/food-delivery-app/static/js/main.495fef59.js.map",
-    "169.de16300d.chunk.js.map": "/food-delivery-app/static/js/169.de16300d.chunk.js.map",
-    "451.8b26f684.chunk.js.map": "/food-delivery-app/static/js/451.8b26f684.chunk.js.map",
-    "635.6915b8c3.chunk.js.map": "/food-delivery-app/static/js/635.6915b8c3.chunk.js.map",
-    "986.14e73ddb.chunk.js.map": "/food-delivery-app/static/js/986.14e73ddb.chunk.js.map",
-    "319.1f709665.chunk.js.map": "/food-delivery-app/static/js/319.1f709665.chunk.js.map",
-    "962.709f5be5.chunk.js.map": "/food-delivery-app/static/js/962.709f5be5.chunk.js.map",
+    "main.7d4a040c.js.map": "/food-delivery-app/static/js/main.7d4a040c.js.map",
+    "169.253c42ee.chunk.js.map": "/food-delivery-app/static/js/169.253c42ee.chunk.js.map",
+    "451.7363933c.chunk.js.map": "/food-delivery-app/static/js/451.7363933c.chunk.js.map",
+    "697.a5a2dcc4.chunk.js.map": "/food-delivery-app/static/js/697.a5a2dcc4.chunk.js.map",
+    "986.472e7a67.chunk.js.map": "/food-delivery-app/static/js/986.472e7a67.chunk.js.map",
+    "160.05c39345.chunk.js.map": "/food-delivery-app/static/js/160.05c39345.chunk.js.map",
+    "229.6e98869a.chunk.js.map": "/food-delivery-app/static/js/229.6e98869a.chunk.js.map",
     "997.55488a2f.chunk.js.map": "/food-delivery-app/static/js/997.55488a2f.chunk.js.map",
-    "732.212297d2.chunk.js.map": "/food-delivery-app/static/js/732.212297d2.chunk.js.map"
+    "225.9b02c684.chunk.js.map": "/food-delivery-app/static/js/225.9b02c684.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be4f8678.css",
-    "static/js/main.495fef59.js"
+    "static/js/main.7d4a040c.js"
   ]
 }
